@@ -35,6 +35,18 @@ app.get('/posts', (req, res)=>{
     res.render("index.ejs", {posts});
 })
 
+app.post('/posts', (req, res)=>{
+    let newPost = req.body;
+    // console.log(req.body)
+    posts.push(newPost);
+    // res.render("index.ejs", {posts}); // optional way
+    res.redirect('/posts')  // conventional way
+})
+
+app.get('/posts/new', (req, res)=>{
+    res.render('new.ejs');
+})
+
 
 
 //starting the server on defined port
