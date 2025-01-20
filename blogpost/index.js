@@ -14,11 +14,25 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 //setting static public folder to accessible in views folder
-app.set(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 //default rout
-app.get('/', (req, res)=>{
-    res.send("everything setup properly");
+let posts = [
+    {
+        username : "Bellswan",
+        description : "Got the job in very big MNC"
+    },
+    {
+        username : "AdverdCullen",
+        description : "Promoted a manager in google to solution architect"
+    },
+    {
+        username : "JacobBlack",
+        description : "Got placed in Amazon as SDE2 with 78Lac CTC"
+    }
+]
+app.get('/posts', (req, res)=>{
+    res.render("index.ejs", {posts});
 })
 
 
