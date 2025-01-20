@@ -1,0 +1,18 @@
+<%- include('includes/head.ejs') %>
+<body>
+    <h1>This Account Belongs to @<%= data.name %> </h1>
+    <button>Follow</button>
+    <button>Message</button>
+    <br>
+    <br>
+    <b>Followers : <%= data.followers %></b> &nbsp;&nbsp;&nbsp;
+    <b>Following : <%= data.following %></b>
+    <hr>
+    <% for(let post of data.posts){ %>
+        <img src="<%= post.image %>" alt="">
+        <b>Likes : <%= post.likes %></b>&nbsp;&nbsp;&nbsp;
+        <b>comment : <%= post.comments %></b>
+    <% } %>
+    <%- include("includes/foot.ejs") %>
+</body>
+</html>

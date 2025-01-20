@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./../styles/style.css" type="text/css">
+    <title>EJS Home</title>
+</head>
+<body>
+    <h2>Card Heading</h2>
+    <h3>Card Description</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam, eum repellat optio earum voluptates officia quod necessitatibus illum labore saepe voluptatum error consequuntur! Quidem illo alias quia cupiditate recusandae, vero veritatis velit obcaecati beatae debitis perspiciatis dolorem eligendi autem, deleniti consequuntur odio facere quaerat distinctio dolor voluptate. Quidem, incidunt et!</p>
+    <button>like</button>
+    <button>Comment</button>
+    <hr>
+    <h1>This Account Belongs to @<%= username %> </h1>
+    <button>Followers</button>
+    <button>following</button>
+    <h2>Accounts That Follow <%= username %></h2>
+    <ul>
+        <% for(follower of followers){ %>
+            <li> <%= follower %></li>
+        <% } %>
+    </ul>
+    <%- include("includes/foot.ejs") %>
+</body>
+</html>
