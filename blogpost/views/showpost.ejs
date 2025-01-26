@@ -1,0 +1,16 @@
+<%- include('include/head.ejs') %>
+<body>
+    <div class="container"> 
+        <h2> Her is your post</h2>
+        <div class="post">
+            <p>Post ID : <%= post.id %></p>
+            <h3 class="user">@<%= post.username %>
+            </h3>
+            <p class="description">
+                <%= post.description %>
+            </p>
+        </div>
+    </div>
+    
+</body>
+</html>

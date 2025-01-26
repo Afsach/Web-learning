@@ -1,27 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>All POSTS</title>
-</head>
+<%- include('include/head.ejs') %>
 
 <body>
     <h1>All Quara Post</h1>
-    <div class="post">
+    <div class="container">
         <% for(post of posts){ %>
-            <h3 class="user">@<%= post.username %>
-            </h3>
-            <p class="description">
-                <%= post.description %>
-            </p>
-        <% } %>
+            <div class="post">
+                <h3 class="user">@<%= post.username %>
+                </h3>
+                <p class="description">
+                    <%= post.description %>
+                </p>
+                <a href="http://localhost:3000/posts/<%=post.id%>">Post details</a>
+            </div>
+            <% } %>
+
+                <div>
+                    <a class="new-post" href="http://localhost:3000/posts/new">New Post</a>
+                </div>
     </div>
-    <div>
-        <a href="http://localhost:3000/posts/new">New Post</a>
-    </div>
+
+
 </body>
 
 </html>
